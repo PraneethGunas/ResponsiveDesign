@@ -20,6 +20,10 @@ h5 {
   padding: 80px 20px;
 }
 
+.container-spacy.background-green.recent {
+  height: 150vh;
+}
+
 /*Backgrounds*/
 
 .background-orange {
@@ -121,6 +125,7 @@ nav#main ul li a:not(.button) {
   line-height: 70px;
   margin-block: 5%;
 }
+
 /*Features*/
 .features {
   text-align: center;
@@ -172,10 +177,6 @@ nav#main ul li a:not(.button) {
   background: #fff;
   color: #27ae60;
 }
-.recent .show-more {
-  margin-top: 40px;
-  font-weight: 600;
-}
 
 /*List items*/
 .in-list {
@@ -191,8 +192,24 @@ nav#main ul li a:not(.button) {
 .row.feature {
   display: flex;
   align-items: center;
-  flex-direction: column;
   text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.card {
+  height: 200px;
+  width: 200px;
+}
+
+#showMoreButton {
+  display: none;
 }
 
 div.scroll::-webkit-scrollbar {
@@ -208,6 +225,12 @@ div::-webkit-scrollbar {
   max-width: 648px;
   width: 100%;
   height: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Navbar */
@@ -283,6 +306,11 @@ div::-webkit-scrollbar {
     flex-direction: column-reverse;
     justify-content: space-around;
   }
+  .flex-row {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+  }
 
   #main {
     display: none;
@@ -299,6 +327,27 @@ div::-webkit-scrollbar {
   }
 
   .large-5 h1 {
-    font-size: 10vw;
+    font-size: 9vw;
   }
+
+  #showMoreButton {
+    background-color: white;
+    height: 40px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .container-spacy.background-green.recent {
+    height: auto;
+  }
+}
+
+a {
+  text-decoration: none;
 }

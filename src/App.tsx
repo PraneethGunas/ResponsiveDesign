@@ -16,18 +16,21 @@ function App() {
   }
 
   function showMore() {
-    const nodes = document.getElementsByClassName('extra');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const nodes = document.getElementsByClassName('extra') as any;
     for (let i = 0; i < nodes.length; i++) {
       const display = nodes[i].style.display;
       nodes[i].style.display = display === 'block' ? 'none' : 'block';
-      setMore(!more);
     }
+    setMore(!more);
   }
 
   return (
     <>
-      <Header toggleNav={toggleNav} />
-      <Main />
+      <div className='container background-orange'>
+        <Header toggleNav={toggleNav} />
+        <Main />
+      </div>
       <RecentWorks showMore={showMore} more={more} />
     </>
   );
