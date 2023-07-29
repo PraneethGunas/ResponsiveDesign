@@ -7,17 +7,24 @@ import jacket from '../img/jacket.png';
 import ghost from '../img/ghost.png';
 import ff from '../img/ff.png';
 import utility from '../img/utility.png';
+import { useState } from 'react';
 
-function RecentWorks({ setShowMore, showMore }) {
+function RecentWorks() {
+  const [showMore, setShowMore] = useState(true);
+
   function toggleShowMore() {
-    const nodes = document.getElementsByClassName(
-      'extra'
-    ) as HTMLCollectionOf<HTMLElement>;
-    for (const element of nodes) {
-      element.style.display = showMore ? 'inline-block' : 'none';
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isMobile) {
+      const nodes = document.getElementsByClassName(
+        'extra'
+      ) as HTMLCollectionOf<HTMLElement>;
+      for (const element of nodes) {
+        element.style.display = showMore ? 'inline-block' : 'none';
+      }
+      setShowMore(!showMore);
     }
-    setShowMore(!showMore);
   }
+
   return (
     <div className='container-spacy background-green recent'>
       <h2>Recent works</h2>

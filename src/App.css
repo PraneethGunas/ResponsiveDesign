@@ -77,12 +77,6 @@ a {
   text-decoration: none;
 }
 
-/* show more */
-
-.recent .show-more {
-  display: none;
-}
-
 @media only screen and (min-width: 1024px) {
   #hamburger {
     display: none;
